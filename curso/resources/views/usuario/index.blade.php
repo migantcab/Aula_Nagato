@@ -30,6 +30,9 @@
                           <th>ID</th>
                           <th>Nome</th>
                           <th>Email</th>
+                          <th>Token</th>
+                          <th>sv_ID</th>
+                          <th>Enviar</th>
                           <th>Editar</th>
                           <th>Deletar</th>
                         </tr>
@@ -40,6 +43,9 @@
                           <td>{{$usuario->id}}</td>
                           <td>{{$usuario->name}}</td>
                           <td>{{$usuario->email}}</td>
+                          <td>{{substr($usuario->token,0,10)}}</td>
+                          <td>{{$usuario->sv_id}}</td>
+                          <td>@if(empty($usuario->token))<a href="/users/enviar/{{$usuario->id}}">Enviar</a>@endif</td>
                           <td><a href="/users/update/{{$usuario->id}}">Editar</a></td>
                           <td><a href="/users/delete/{{$usuario->id}}">Deletar</a></td>
                         </tr>

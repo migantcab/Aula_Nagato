@@ -4,7 +4,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Usuários</h2>
+                    <h2>Produtos</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -27,21 +27,23 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Nome</th>
-                          <th>Email</th>
+                          <th>Codigo</th>
+                          <th>Nome do Produto</th>
+                          <th>Qt</th>
+                          <th>Preço</th>
                           <th>Editar</th>
                           <th>Deletar</th>
                         </tr>
                       </thead>
                       <tbody>
-                      @foreach($usuarios as $usuario)
+                      @foreach($produtos as $produto)
                         <tr>
-                          <td>{{$usuario->id}}</td>
-                          <td>{{$usuario->name}}</td>
-                          <td>{{$usuario->email}}</td>
-                          <td><a href="/users/update/{{$usuario->id}}">Editar</a></td>
-                          <td><a href="/users/delete/{{$usuario->id}}">Deletar</a></td>
+                          <td>{{$produto->codigo}}</td>
+                          <td>{{$produto->nome}}</td>
+                          <td>{{$produto->qt}}</td>
+                          <td>{{$produto->preco_unitario}}</td>
+                          <td><a href="/produtos/update/{{$produto->_id}}">Editar</a></td>
+                          <td><a href="/produtos/delete/{{$produto->_id}}">Deletar</a></td>
                         </tr>
                         @endforeach
                       </tbody>

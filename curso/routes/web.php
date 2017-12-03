@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/users', 'UsuariosController@index');
  Route::get('/users/create', 'UsuariosController@criarUsuario');
 Route::post('/users/create', 'UsuariosController@criaUsuario');
@@ -27,6 +28,14 @@ Route::get('/users/delete/{id}', 'UsuariosController@deletarUsuario');
 
 /* Miguel criando Rota */
 
+Route::get('/users/enviar/{id}', 'UsuariosController@enviarUsuario');
+
+
 Route::get('/produtos', 'ProdutosController@index');
-Route::get('/produtos/criar','ProdutosController@CriarProduto');
-Route::post('/produtos/criar', 'UsuariosController@CriaUsuario');
+Route::get('/produtos/criar','ProdutosController@criarProduto');
+Route::post('/produtos/criar', 'ProdutosController@criaProduto');
+
+Route::get('/produtos/update/{id}', 'ProdutosController@atualizarProduto');
+Route::post('/produtos/update', 'ProdutosController@atualizaProduto');
+Route::get('/produtos/delete/{id}', 'ProdutosController@deletarProduto');
+

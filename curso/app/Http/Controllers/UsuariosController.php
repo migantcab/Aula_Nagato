@@ -48,4 +48,35 @@ class UsuariosController extends Controller
         $usuario->delete();
         return redirect('/users');
     }
+
+    public function enviarUsuario($id){
+
+        $usuario = \App\User::where('id', $id)->first();
+        //aqui devo colocar comando que envia $usuario para a API do Nagato,
+        // mas somente os dois primeiros parametros e não o password.
+
+        $url="http://laraapi.jelasticlw.com.br/api/company";
+
+        $temp= [
+            'company_name' => $usuario->name,
+            'company_email' => $usuario->email
+        ];
+        
+        $data = json_encode($temp);
+        
+        $empresa=\App\Helper\WebRequest::postData($url,$data);
+
+        $usuario->token = $empresa->company_token;;
+        $usuario->sv_id = $empresa->_id;
+
+        $usuario->save();
+
+        
+        return redirect('/users');
+    }
+
+
+
+
+
 }

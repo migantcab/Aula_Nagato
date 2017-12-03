@@ -16,7 +16,8 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     @include('layouts.sidebars.users')
-                    @include('layouts.sidebars.estoque')
+                    @include('layouts.sidebars.produtos')
+                    @include('layouts.sidebars.mandar')
                 </ul>
             </div>
 

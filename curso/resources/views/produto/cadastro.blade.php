@@ -4,7 +4,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Cadastro de Usuário</small></h2>
+                    <h2>Cadastro de Produtos</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -24,23 +24,44 @@
                   </div>
                   <div class="x_content">
                     <br>
-                    <form id="" data-parsley-validate="" action="/users/update" method="POST" class="form-horizontal form-label-left" novalidate="">
+                    <form id="" data-parsley-validate="" action="/produtos/criar" method="POST" class="form-horizontal form-label-left" novalidate="">
                     {{ csrf_field() }} 
-                    <input id="id"  name= "id" value="{{$usuario->id}}" required="required" hidden type="text">
+
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nome<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="codigo">codigo<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="nome"  name= "nome" value="{{$usuario->name}}" required="required" class="form-control col-md-7 col-xs-12" type="text">
+                          <input id="Codigo"  name= "codigo" required="required" class="form-control col-md-7 col-xs-12" type="text">
                         </div>
                       </div>
+
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Email <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome">Nome do Produto<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="email" name="email" value="{{$usuario->email}}" required="required" class="form-control col-md-7 col-xs-12" type="email">
+                          <input id="Nome" name="nome" required="required" class="form-control col-md-7 col-xs-12" type="text" >
                         </div>
                       </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="qt">Quantidade <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="qt" name="qt" required="required" class="form-control col-md-7 col-xs-12" type="number">
+                        </div>
+                      </div>
+
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Preço Unitário<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="preco_unitario" name="preco_unitario" required="required" class="form-control col-md-7 col-xs-12" type="number"step="0.01" >
+                        </div>
+                      </div>
+
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

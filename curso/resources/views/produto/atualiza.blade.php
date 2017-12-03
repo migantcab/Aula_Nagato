@@ -24,28 +24,45 @@
                   </div>
                   <div class="x_content">
                     <br>
-                    <form id="" data-parsley-validate="" action="/users/create" method="POST" class="form-horizontal form-label-left" novalidate="">
+                    <form id="" data-parsley-validate="" action="/produtos/update" method="POST" class="form-horizontal form-label-left" novalidate="">
                     {{ csrf_field() }} 
+                    <input id="_id"  name= "_id" value="{{$produto->_id}}" required="required" type="text">
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nome<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="codigo">Codigo<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="nome"  name= "nome" required="required" class="form-control col-md-7 col-xs-12" type="text">
+                          <input id="codigo"  name= "codigo" value="{{$produto->codigo}}" required="required" class="form-control col-md-7 col-xs-12" type="text">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Email <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome">Nome<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="email" name="email" required="required" class="form-control col-md-7 col-xs-12" type="email">
+                          <input id="nome" name="nome" value="{{$produto->nome}}" required="required" class="form-control col-md-7 col-xs-12" type="text">
                         </div>
                       </div>
+
+
                       <div class="form-group">
-                        <label for="senha" class="control-label col-md-3 col-sm-3 col-xs-12">Senha<span class="required">*</span></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="qt">Quantidade<span class="required">*</span>
+                        </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="senha" class="form-control col-md-7 col-xs-12" name="senha" type="password">
+                          <input id="qt" name="qt" value="{{$produto->qt}}" required="required" class="form-control col-md-7 col-xs-12" type="text">
                         </div>
                       </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="preco_unitario">Preco Unitario<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="preco_unitario" name="preco_unitario" value="{{$produto->preco_unitario}}" required="required" class="form-control col-md-7 col-xs-12" type="text">
+                        </div>
+                      </div>
+
+
+                      
+
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

@@ -117,7 +117,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Lightning Wasp 2017
+                    Miguel Lightning Wasp 2017
                 </div>
                 <div class="clearfix"></div>
             </footer>
